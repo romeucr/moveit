@@ -8,9 +8,8 @@ import styles from '../styles/pages/Home.module.css';
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head> {/* //coloca na head do html tudo que estiver aqui */}
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Rajdhani:wght@600&display=swap" rel="stylesheet" />
+      <Head> {/* //coloca na head do html tudo que estiver aqui. Aqui somente o que for da home. Em _document.tsx o que for global */}
+        <title>Início | move.it!</title>
       </Head>
       <ExperienceBar />
       <section>
