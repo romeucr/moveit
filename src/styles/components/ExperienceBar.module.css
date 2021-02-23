@@ -1,0 +1,31 @@
+
+/* no CCS modules do next os nomes das classes não utilizam base-bar e sim camelCase*/
+.experienceBar {
+   display: flex;
+   align-items: center;
+}
+
+.experienceBar span {
+   font-size: 1rem;
+}
+
+.experienceBar .baseBar {
+   flex: 1;
+   height: 4px;
+   border-radius: 4px;
+   background: var(--gray-line);
+   margin: 0 1.5rem;
+   position: relative;
+}
+
+.experienceBar .evolutionBar {
+   height: 4px;
+   border-radius: 4px;
+   background: var(--green);
+}
+
+.experienceBar .currentExperience {
+   position: absolute;
+   top: 12px;
+   transform: translateX(-50%);
+}

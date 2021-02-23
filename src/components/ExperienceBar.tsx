@@ -1,14 +1,16 @@
+import styles from '../styles/components/ExperienceBar.module.css'
+
 export function ExperienceBar() {
    return (
-      <header className="experience-bar">
+      <header className={styles.experienceBar}>
          <span>0 xp </span>
-         <div className="base-bar">
+         <div className={styles.baseBar}>
             <div
-               className="evolution-bar"
+               className={styles.evolutionBar}
                style={{ width: '50%' }} /* width inline style because it will change. */
             >  
                <span 
-                  className="current-experience"
+                  className={styles.currentExperience}
                   style={{ left: '50%' }}
                >
                   300 xp
