@@ -5,7 +5,7 @@ import styles from '../styles/components/Countdown.module.css'
 let countdownTimeout: NodeJS.Timeout // node.js.timeout -> tipo da variável
 
 export function Countdown() {
-   const { startNewChalenge } = useContext(ChallengesContext)
+   const { startNewChallenge } = useContext(ChallengesContext)
 
    const [time, setTime] = useState(0.05 * 60) /* 25 minutos em segundos */
    const [isActive, setIsActive] = useState(false)
@@ -41,7 +41,7 @@ export function Countdown() {
       } else if (isActive && time === 0) {
          setHasFinished(true)
          setIsActive(false)
-         startNewChalenge()
+         startNewChallenge()
       }
 
    }, [isActive, time])
