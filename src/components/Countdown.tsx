@@ -1,18 +1,15 @@
 import { useState, useEffect, useContext } from 'react'
-import { ChallengesContext } from '../contexts/ChallengesContext'
+import { CountdownContext } from '../contexts/CountdownContext'
 import styles from '../styles/components/Countdown.module.css'
 
-let countdownTimeout: NodeJS.Timeout // node.js.timeout -> tipo da variável
-
 export function Countdown() {
-   const { startNewChallenge } = useContext(ChallengesContext)
-
-   const [time, setTime] = useState(0.05 * 60) /* 25 minutos em segundos */
-   const [isActive, setIsActive] = useState(false)
-   const [hasFinished, setHasFinished] = useState(false);
-
-   const minutes = Math.floor(time / 60)
-   const seconds = time % 60
+   const { 
+      minutes, 
+      seconds, 
+      hasFinished, 
+      isActive, 
+      startCountdown, 
+      resetCountdown } = useContext(CountdownContext)
 
    /* padStart verifica se a string possui 2 caracteres e se nao adiciona 0 a esquerda(start) 
       [minuteLeft, minuteRight]-> o split separa a string num array, neste caso array de dois elementos. 
@@ -20,31 +17,6 @@ export function Countdown() {
    */
    const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('')
    const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('')
-
-   function startCountdown() {
-      setIsActive(true)
-   }
-
-   function resetCountdown() {
-      // Evita a execução do timeout após um segundo. Ao setar isActive para false, o setTimeout já foi executado e irá diminuir ainda 1 segundo. 
-      // Aqui esse comportamento é cancelado
-      clearTimeout(countdownTimeout)
-      setIsActive(false);
-      setTime(0.05 * 60)
-   }
-
-   useEffect(() => {
-      if (isActive && time > 0) {
-         countdownTimeout = setTimeout(() => { /* setTimeout():  fazer com que algo acontece depois de um tempo (1000 milessegundos, 1 segundo) */
-            setTime(time - 1)
-         }, 1000)
-      } else if (isActive && time === 0) {
-         setHasFinished(true)
-         setIsActive(false)
-         startNewChallenge()
-      }
-
-   }, [isActive, time])
 
    return (
       <div>
