@@ -74,7 +74,7 @@ export function ChallengesProvider({ children, ...rest }: ChallengesProviderProp
       setActiveChallenge(challenge)
 
       /* tocar um audio ao liberar novo desafio. Audio() nativo do navegador */
-      new Audio('/notification.mp3').play
+      new Audio('/notification.mp3').play()
 
       /* cria a notificação que será enviada ao usuário. nativo do navegador */
       if (Notification.permission === 'granted') {
