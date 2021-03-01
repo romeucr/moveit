@@ -7,9 +7,9 @@ export function Profile() {
     
    return (
       <div className={styles.profileContainer}>
-         <img src="https://github.com/romeucr.png" alt="Romeu Castro"/>
+         <img src="/panda-avatar.png" alt="Romeu Castro"/>
          <div>
-            <strong>Romeu Castro Rodrigues</strong>
+            <strong>Panda (convidado)</strong>
             <p>
                <img src="icons/level.svg" alt="Level arrow"/> {/* no next.js tudo que está na pasta public basta acessar assim */}
                Level {level}
