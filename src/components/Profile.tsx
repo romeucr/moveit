@@ -7,7 +7,7 @@ export function Profile() {
     
    return (
       <div className={styles.profileContainer}>
-         <img src="/panda-avatar.png" alt="Romeu Castro"/>
+         <img src="/panda-avatar.png" alt="Panda Avatar"/>
          <div>
             <strong>Panda (convidado)</strong>
             <p>
